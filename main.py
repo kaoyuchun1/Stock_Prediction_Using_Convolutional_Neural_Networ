@@ -3,10 +3,11 @@
 import time
 start_time = time.time()
 import pandas as pd
+import pickle
 
-#df=pd.read_csv('J:\\730新金融商品部\\人工智慧小組\\高宇駿\\台指\\TWSE.csv')
-df=pd.read_csv('TWSE.csv')
-
+with open('twse.pickle', 'rb') as file:
+    df =pickle.load(file)
+    
 col1=['日期','開盤價','最高價','最低價','收盤價','成交量']
 
 df=df[col1]
